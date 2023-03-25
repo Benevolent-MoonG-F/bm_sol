@@ -143,7 +143,7 @@ pub mod example_sol_anchor_contract {
             let normalize = (10 as i64)
                 .checked_pow((loan_price.expo - collateral_price.expo) as u32)
                 .ok_or(ErrorCode::Overflow)?;
-            collateral_min_value = collateral_min_value
+  \          collateral_min_value = collateral_min_value
                 .checked_mul(normalize)
                 .ok_or(ErrorCode::Overflow)?;
         } else if loan_price.expo < collateral_price.expo {
